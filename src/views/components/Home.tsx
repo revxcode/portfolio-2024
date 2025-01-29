@@ -1,15 +1,15 @@
 "use client";
 
-import dynamic from "next/dynamic";
-import Introduction from "./Introduction";
-import { useEffect, useRef } from "react";
-import { useInView } from "react-intersection-observer";
 import { useScrollStore } from "@/stores/useScrollStore";
+import dynamic from "next/dynamic";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import Introduction from "./Introduction";
 
 //dynamic importteds
 const About = dynamic(() => import("./About"));
-const Skills = dynamic(() => import("./Skills"));
-const Services = dynamic(() => import("./Services"));
+const Skills = dynamic(() => import("./Skill"));
+const Services = dynamic(() => import("./Service"));
 
 export default function Home() {
   const { setSectionRef } = useScrollStore();
@@ -20,25 +20,21 @@ export default function Home() {
 
   const {
     ref: introInViewRef,
-    inView: introInView,
     entry: introEntry,
   } = useInView(defaultOptions);
 
   const {
     ref: aboutInViewRef,
-    inView: aboutInView,
     entry: aboutEntry,
   } = useInView(defaultOptions);
 
   const {
     ref: skillInViewRef,
-    inView: skillInView,
     entry: skillEntry,
   } = useInView(defaultOptions);
 
   const {
     ref: serviceInViewRef,
-    inView: serviceInView,
     entry: serviceEntry,
   } = useInView(defaultOptions);
 

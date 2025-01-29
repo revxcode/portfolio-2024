@@ -1,11 +1,11 @@
 import {
+  BriefcaseBusiness,
+  CodeXml,
   HomeDefault,
   UserRound,
-  CodeXml,
-  BriefcaseBusiness,
 } from "@/components/Icon/DefaultIcons";
-import SideLink from "./SideLink";
 import { useScrollStore } from "@/stores/useScrollStore";
+import SideLink from "./SideLink";
 
 export default function SideOverview() {
   const { sectionRefs } = useScrollStore();

@@ -19,7 +19,6 @@ export const useScrollStore = create<useScrollStoreProps>((set) => ({
   scrollToSection: (section) => {
     setTimeout(() => {
       const ref = useScrollStore.getState().sectionRefs[section];
-      // console.log(ref);
       if (ref && ref.target) {
         ref.target.scrollIntoView({ behavior: "smooth" });
       }
